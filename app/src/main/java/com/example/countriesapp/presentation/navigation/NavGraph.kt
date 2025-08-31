@@ -48,7 +48,8 @@ private fun countryDetails(
         val countryName = backStackEntry.arguments?.getString("country_name")
         CountryDetailsScreen(
             countryName = countryName,
-            countryViewModel
+            navController = navController,
+            countryViewModel,
         )
     }
 }
