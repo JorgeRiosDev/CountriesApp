@@ -46,6 +46,7 @@ dependencies {
 
     implementation("com.google.dagger:hilt-android:2.51.1")
     kapt("com.google.dagger:hilt-compiler:2.51.1")
+    implementation ("androidx.hilt:hilt-navigation-compose:1.1.0-alpha01")
 
     // Retrofit
     implementation(libs.retrofit)
@@ -54,6 +55,8 @@ dependencies {
     implementation(libs.logging.interceptor)
 
     implementation(libs.coil.compose)
+
+    implementation ("androidx.navigation:navigation-compose:2.7.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

@@ -1,9 +1,7 @@
 package com.example.countriesapp.presentation.viewmodels
 
+import CountryState
 import android.util.Log
-import androidx.compose.runtime.mutableStateOf
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.countriesapp.data.model.Country
@@ -25,16 +23,34 @@ class CountryViewModel @Inject constructor(
     private val _countries = MutableStateFlow<List<Country>>(emptyList())
     val countries: StateFlow<List<Country>> = _countries
 
+    private val _countryState = MutableStateFlow(CountryState())
+    val countryState: StateFlow<CountryState> = _countryState.asStateFlow()
+
+    init {
+        fetchAnswer()
+    }
+
     fun fetchAnswer() {
         viewModelScope.launch {
             try {
                 val result = repo.fetchCountries()
                 _countries.value = result
-                Log.d("CountryViewModel", "Response size: ${result.size}")
-                result.forEach { Log.d("CountryViewModel", "Country: ${it.name.common}") }
             } catch (e: Exception) {
-                Log.e("CountryViewModel", "Error fetching countries", e)
                 _countries.value = emptyList()
+            }
+        }
+    }
+
+    fun fetchCountryByName(name: String) {
+        viewModelScope.launch {
+            _countryState.value = CountryState(isLoading = true)
+            try {
+                val result = repo.fetchCountryByName(name)
+                _countryState.value = CountryState(country = result.firstOrNull() ?: throw Exception("Country not found"))
+                Log.e("a", result.toString())
+            } catch (e: Exception) {
+                _countryState.value = CountryState(error = e.message)
+                Log.e("a", e.toString())
             }
         }
     }

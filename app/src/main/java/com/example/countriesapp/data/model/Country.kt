@@ -2,7 +2,8 @@ package com.example.countriesapp.data.model
 
 data class Country(
     val flags: Flags,
-    val name: Name
+    val name: Name,
+    val languages: Map<String, String>?
 )
 
 data class Flags(
