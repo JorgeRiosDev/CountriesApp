@@ -7,5 +7,5 @@ import com.example.countriesapp.data.remote.RestCountriesApi
 class RestCountriesRepository(private val api: RestCountriesApi) {
     suspend fun fetchCountries(): List<Country> = api.getAllCountries()
     suspend fun fetchCountryByName(name: String): List<CountryDetails> = api.getCountryByName(name)
-
+    suspend fun fetchCountriesByName(name: String): List<Country> = api.getCountriesByName(name)
 }

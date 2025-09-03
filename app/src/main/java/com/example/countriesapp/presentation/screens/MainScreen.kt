@@ -10,10 +10,7 @@ import com.example.countriesapp.presentation.viewmodels.CountryViewModel
 
 @Composable
 fun MainScreen(navController: NavHostController, viewModel: CountryViewModel) {
-    Scaffold(
-        modifier = Modifier.fillMaxSize(),
-
-        ) { innerPadding ->
+    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
         CountryScreen(navController, modifier = Modifier.padding(innerPadding), viewModel)
     }
 }

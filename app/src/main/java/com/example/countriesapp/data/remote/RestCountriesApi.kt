@@ -15,5 +15,11 @@ interface RestCountriesApi {
     @GET("name/{country_name}")
     suspend fun getCountryByName(
         @Path("country_name") countryName: String
-    ):List<CountryDetails>
+    ): List<CountryDetails>
+
+    @GET("name/{country_name}")
+    suspend fun getCountriesByName(
+        @Path("country_name") countryName: String
+    ): List<Country>
+
 }
