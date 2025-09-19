@@ -2,6 +2,7 @@ CountriesApp
 
 Aplicación Android moderna para explorar información de países usando la API pública [REST Countries](https://restcountries.com/).
 
+
 Características
 - Listado de países con información básica.
 - Búsqueda por nombre.
@@ -11,6 +12,7 @@ Características
 - Inyección de dependencias con Hilt.
 - Consumo de API con Retrofit.
 
+
 Tecnologías usadas
 - **Kotlin** - Lenguaje principal.
 - **Jetpack Compose** - UI moderna y declarativa.
@@ -19,11 +21,13 @@ Tecnologías usadas
 - **Coroutines + Flow** - Para operaciones asíncronas.
 - **Material 3** - Componentes y estilos modernos.
 
-  Capturas de pantalla
+
+Capturas de pantalla
 
   | ![Lista](docs/1.png) | ![Detalle](docs/2.png) |
 
-  Instalación
+
+Instalación
 Sigue estos pasos para ejecutar la aplicación en tu máquina:
 
 ### 1. Clona el repositorio
