@@ -21,7 +21,7 @@ Tecnologías usadas
 
   Capturas de pantalla
 
-  | ![Lista](docs/list.png) | ![Detalle](docs/detail.png) |
+  | ![Lista](docs/1.png) | ![Detalle](docs/2.png) |
 
   Instalación
 Sigue estos pasos para ejecutar la aplicación en tu máquina:
